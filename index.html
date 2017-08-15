@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Churrasco 1 ano</title>
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #EF946C;
+            color: rgba(0,0,0,0.25);
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 200px;
+        }
+
+        h1 {
+            font-size: 4em;
+            font-weight: normal;
+        }
+
+        h1 span {
+            font-size: 1em;
+        }
+
+        li {
+            display: inline-block;
+            font-size: 2.5em;
+            list-style-type: none;
+            padding: 1em;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        li span {
+            display: block;
+            font-size: 4.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Contagem Regressiva:</h1>
+        <ul id="timer">
+            <li><span id="hours"></span>Horas</li>
+            <li><span id="minutes"></span>Minutos</li>
+            <li><span id="seconds"></span>Segundos</li>
+        </ul>
+        <h1>
+            <span class="em em-meat_on_bone"></span> 
+            Churrasco 1 ano crescer
+            <span class="em em-meat_on_bone"></span>    
+        </h1>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js"></script>
+    <script>
+        $('#timer').countdown("2017/08/19 09:00:00", function (event) {
+            var totalHours = event.offset.totalDays * 24 + event.offset.hours;
+            $('#hours').html(totalHours);
+            $('#minutes').html(event.strftime('%M'));
+            $('#seconds').html(event.strftime('%S'));
+        });
+    </script>
+</body>
+
+</html>
